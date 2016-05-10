@@ -7,6 +7,6 @@ Check out https://lwjglgamedev.gitbooks.io/3d-game-development-with-lwjgl/conten
 <br>
 Use as an eclipse project and launch Start file as Java Program
 <br>
-WARNING
+# WARNING
 <br>
 Use `-XstartOnFirstThread` VM argument on macs
