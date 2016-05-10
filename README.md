@@ -9,4 +9,4 @@ Use as an eclipse project and launch Start file as Java Program
 <br>
 WARNING
 <br>
-Use -XstartOnFirstThread VM argument on macs
+Use `-XstartOnFirstThread` VM argument on macs
