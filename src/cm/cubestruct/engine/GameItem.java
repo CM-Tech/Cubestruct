@@ -1,10 +1,12 @@
 package cm.cubestruct.engine;
 
 import org.joml.Vector3f;
+import org.lwjgl.opengl.GL11;
 
+import cm.cubestruct.engine.render.IRenderObject;
 import cm.cubestruct.engine.render.Mesh;
 
-public class GameItem {
+public class GameItem implements IRenderObject {
 
     private final Mesh mesh;
     
@@ -52,4 +54,16 @@ public class GameItem {
     public Mesh getMesh() {
         return mesh;
     }
+
+	@Override
+	public void render() {
+		mesh.render();
+		
+	}
+
+	@Override
+	public int shouldRender() {
+		// TODO Auto-generated method stub
+		return GL11.GL_TRUE;
+	}
 }

@@ -70,7 +70,7 @@ public class Renderer {
                     gameItem.getScale());
             shaderProgram.setUniform("worldMatrix", worldMatrix);
             // Render the mes for this game item
-            gameItem.getMesh().render();
+            gameItem.render();
         }
 
         shaderProgram.unbind();
