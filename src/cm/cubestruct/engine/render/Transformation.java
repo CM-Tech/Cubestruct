@@ -41,7 +41,7 @@ public class Transformation {
     public Matrix4f getWorldMatrix(Vector3f offset, Vector3f rotation, float scale,Camera c) {
         worldMatrix.identity().rotateX(-(float)Math.toRadians(c.rotation.x)).
         rotateY(-(float)Math.toRadians(c.rotation.y)).
-        translate(c.getPosition()).
+        translate(new Vector3f(c.getPosition().x,-c.getPosition().y,c.getPosition().z)).
         translate(offset).
                 rotateX((float)Math.toRadians(rotation.x)).
                 rotateY((float)Math.toRadians(rotation.y)).

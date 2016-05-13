@@ -13,6 +13,7 @@ import cm.cubestruct.engine.render.Transformation;
 import static org.lwjgl.opengl.GL11.*;
 
 import java.nio.FloatBuffer;
+import java.util.ArrayList;
 
 public class Renderer {
 
@@ -50,7 +51,7 @@ public class Renderer {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     }
 
-    public void render(Window window, GameItem[] gameItems,Camera camera) {
+    public void render(Window window, ArrayList<GameItem> gameItems,Camera camera) {
         clear();
 
         if ( window.isResized() ) {

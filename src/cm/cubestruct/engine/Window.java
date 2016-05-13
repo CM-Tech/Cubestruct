@@ -24,7 +24,7 @@ public class Window {
 
 	private int height;
 
-	private long windowHandle;
+	public long windowHandle;
 
 	private GLFWErrorCallback errorCallback;
 

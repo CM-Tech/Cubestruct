@@ -70,9 +70,9 @@ public class Cube extends GameItem {
           0.5f, -0.5f, 0.5f,
       };
       for(int i=0;i<positions.length;i+=3){
-    	  positions[i]=positions[i]*size.x;
-    	  positions[i+1]=positions[i+1]*size.y;
-    	  positions[i+2]=positions[i+2]*size.z;
+    	  positions[i]=positions[i]*size.x-size.x/2.0f;
+    	  positions[i+1]=positions[i+1]*size.y-size.y/2.0f;
+    	  positions[i+2]=positions[i+2]*size.z-size.z/2.0f;
       }
       float[] textCoords = new float[]{
           0.0f, 0.0f,
