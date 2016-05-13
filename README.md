@@ -6,7 +6,8 @@ For help with LWJGL 3, check out https://lwjglgamedev.gitbooks.io/3d-game-develo
 
 # Usage
 
-1. Create a folder to be the Eclipse workspace
+1. Download Eclipse and the latest Java version
+2. Create a folder to be the Eclipse workspace
 2. Download and drag the Cubestruct folder into the workspace
 3. Open Eclipse and select the location of your workspace
 4. In the Eclipse navbar go to File>Import>General>Existing Projects into Workspace
