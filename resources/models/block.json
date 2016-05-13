@@ -1,0 +1,10 @@
+{
+	"textures":[
+		{"id":"0", "path":"grass.png"}
+	],
+	"employees":[
+    	{"firstName":"John", "lastName":"Doe"},
+    	{"firstName":"Anna", "lastName":"Smith"},
+    	{"firstName":"Peter", "lastName":"Jones"}
+	]
+}
