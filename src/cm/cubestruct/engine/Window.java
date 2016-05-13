@@ -148,12 +148,12 @@ public class Window {
 		GL11.glCullFace(GL11.GL_BACK);
 	}
 
-	public int[] keysPressed() {
-		int[] k = new int[this.keysPressed.size()];
+	public ArrayList<Integer> keysPressed() {
+		/*int[] k = new int[this.keysPressed.size()];
 		for (int i = 0; i < this.keysPressed.size(); i++) {
 			k[i] = this.keysPressed.get(i);
-		}
-		return k;
+		}*/
+		return this.keysPressed;
 	}
 
 	public void setClearColor(float r, float g, float b, float alpha) {
