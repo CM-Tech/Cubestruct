@@ -2,7 +2,7 @@
 A Minecraft Clone in LWJGL 3
 
 For help with LWJGL 3, check out https://lwjglgamedev.gitbooks.io/3d-game-development-with-lwjgl/content/.
-(We are using the chapter 2 game engine)
+(We need to add the lighting directional light from here!)
 
 # Usage
 
@@ -11,6 +11,8 @@ For help with LWJGL 3, check out https://lwjglgamedev.gitbooks.io/3d-game-develo
 2. Download and drag the Cubestruct folder into the workspace
 3. Open Eclipse and select the location of your workspace
 4. In the Eclipse navbar go to File>Import>General>Existing Projects into Workspace
+5. Make sure LWJGL Lirbary paths are correct in configurations
+6. ESC to close
 
 ###If on a mac:
 
@@ -24,4 +26,4 @@ For help with LWJGL 3, check out https://lwjglgamedev.gitbooks.io/3d-game-develo
 
 * ModderMe123 added rainbow blocks
 
-* You can move the block all four directions and resize it
+* Minecraft Camera Controls
