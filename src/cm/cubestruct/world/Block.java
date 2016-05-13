@@ -2,12 +2,13 @@ package cm.cubestruct.world;
 
 import org.joml.Vector3f;
 
+import cm.cubestruct.engine.GameItem;
 import cm.cubestruct.engine.render.Cube;
 import cm.cubestruct.engine.render.IRenderObject;
 
 public class Block {
 	private final Vector3f position;
-	public IRenderObject model;
+	public GameItem model;
 	public Block(int bX,int bY,int bZ,String texture){
 		position=new Vector3f(bX,bY,bZ);
 		try {

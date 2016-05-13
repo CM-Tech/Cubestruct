@@ -66,4 +66,10 @@ public class GameItem implements IRenderObject {
 		// TODO Auto-generated method stub
 		return GL11.GL_TRUE;
 	}
+
+	@Override
+	public void cleanup() {
+		mesh.cleanUp();
+		
+	}
 }

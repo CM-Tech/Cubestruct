@@ -4,5 +4,6 @@ public interface IRenderObject {
 	
 	public void render();
 	public int shouldRender();
+	public void cleanup();
 	
 }

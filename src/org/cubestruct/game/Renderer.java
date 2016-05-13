@@ -9,6 +9,7 @@ import cm.cubestruct.engine.Window;
 import cm.cubestruct.engine.render.Camera;
 import cm.cubestruct.engine.render.ShaderProgram;
 import cm.cubestruct.engine.render.Transformation;
+import cm.cubestruct.world.World;
 
 import static org.lwjgl.opengl.GL11.*;
 
@@ -51,9 +52,13 @@ public class Renderer {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     }
 
-    public void render(Window window, ArrayList<GameItem> gameItems,Camera camera) {
+    public void render(Window window, ArrayList<GameItem> gameItems,Camera camera,World world) {
         clear();
-
+        ArrayList<GameItem> allGameItems=new ArrayList<GameItem>();
+        allGameItems.addAll(gameItems);
+        if(world!=null){
+        allGameItems.addAll(world.renderItems());
+        }
         if ( window.isResized() ) {
             glViewport(0, 0, window.getWidth(), window.getHeight());
             window.setResized(false);
@@ -70,7 +75,7 @@ public class Renderer {
         
         shaderProgram.setUniform("texture_sampler", 0);
         // Render each gameItem
-        for(GameItem gameItem : gameItems) {
+        for(GameItem gameItem : allGameItems) {
             // Set world matrix for this item
             Matrix4f worldMatrix = transformation.getWorldMatrix(
                     gameItem.getPosition(),

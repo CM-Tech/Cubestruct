@@ -10,6 +10,8 @@ import cm.cubestruct.engine.render.Camera;
 import cm.cubestruct.engine.render.Cube;
 import cm.cubestruct.engine.render.Mesh;
 import cm.cubestruct.engine.render.Texture;
+import cm.cubestruct.world.SuperFlatGen;
+import cm.cubestruct.world.World;
 
 import org.lwjgl.BufferUtils;
 import  org.lwjgl.glfw.GLFW;
@@ -33,6 +35,7 @@ public class CubeStruct implements IGameLogic {
     private final Renderer renderer;
 
     private ArrayList<GameItem> gameItems;
+    public World world;
 
     public CubeStruct() {
     	camera.position.add(0, 1.5f, 0);
@@ -47,6 +50,8 @@ public class CubeStruct implements IGameLogic {
         renderer.init(window);
         
         gameItems = new ArrayList<GameItem>();
+      //world=new World(new SuperFlatGen());
+        if(world==null){
         for(float y=-5.0f;y<=0.0f;y++){
         for(float x=-7.0f;x<=8.0f;x++){
         	for(float z=-7.0f;z<=8.0f;z++){
@@ -57,7 +62,9 @@ public class CubeStruct implements IGameLogic {
         }
         }
         }
+        }
         glfwSetInputMode(window.windowHandle, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+        
     }
 
     @Override
@@ -125,40 +132,18 @@ public class CubeStruct implements IGameLogic {
         if(window.isKeyPressed(GLFW.GLFW_KEY_LEFT_SHIFT) || window.isKeyPressed(GLFW.GLFW_KEY_RIGHT_SHIFT)){
         	camera.position=camera.getPosition().add(new Vector3f(0.0f,-interval*3.0f,0f));
 		}
-        for (GameItem gameItem : gameItems) {
-            // Update position
-            Vector3f itemPos = gameItem.getPosition();
-            float posx = itemPos.x + displxInc * 0.01f;
-            float posy = itemPos.y + displyInc * 0.01f;
-            float posz = itemPos.z + displzInc * 0.01f;
-            //gameItem.setPosition(posx, posy, posz);
-
-            // Update scale
-            float scale = gameItem.getScale();
-            scale += scaleInc * 0.05f;
-            if (scale < 0) {
-                scale = 0;
-            }
-            //gameItem.setScale(scale);
-
-            // Update rotation angle
-            float rotation = gameItem.getRotation().x + 1.5f;
-            if (rotation > 360) {
-                rotation = 0;
-            }
-            //gameItem.setRotation(rotation, rotation, rotation);
-            
-        }
+        
     }
 
     @Override
     public void render() {
-        renderer.render(window,gameItems,camera);
+        renderer.render(window,gameItems,camera,world);
     }
 
     @Override
     public void cleanup() {
         renderer.cleanup();
+        world.cleanup();
         for (GameItem gameItem : gameItems) {
             gameItem.getMesh().cleanUp();
         }
