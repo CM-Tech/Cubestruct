@@ -10,3 +10,9 @@ Use as an eclipse project and launch Start file as Java Program
 # WARNING
 
 Use `-XstartOnFirstThread` VM argument on macs
+
+#Features
+
+* ModderMe123 added rainbow blocks
+
+* You can move the block all four directions and resize it
