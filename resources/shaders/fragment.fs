@@ -35,5 +35,5 @@ vec4 hsv_to_rgb(float h, float s, float v, float a)
 
 void main()
 {
-    fragColor = texture(texture_sampler, outTexCoord)+hsv_to_rgb(outTexCoord.x, 1., 1., 1.);
+    fragColor = texture(texture_sampler, outTexCoord);
 }

@@ -47,10 +47,12 @@ public class CubeStruct implements IGameLogic {
         
         gameItems = new ArrayList<GameItem>();
         for(float x=-7.0f;x<=8.0f;x++){
+        	for(float z=-7.0f;z<=8.0f;z++){
         GameItem gameItem = new Cube(new Vector3f(1.0f,1.0f,1.0f),"/textures/grass.png");
-        gameItem.setPosition(x, 0, 0);
+        gameItem.setPosition(x, 0, z);
         
         gameItems.add(gameItem);
+        }
         }
         glfwSetInputMode(window.windowHandle, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     }
