@@ -7,9 +7,20 @@ Check out https://lwjglgamedev.gitbooks.io/3d-game-development-with-lwjgl/conten
 
 Use as an eclipse project and launch Start file as Java Program
 
-# WARNING
+# Usage
 
-Use `-XstartOnFirstThread` VM argument on macs
+1. Create a folder to be the Eclipse workspace
+2. Download and drag the Cubestruct folder into the workspace
+3. Open Eclipse and select the location of your workspace
+4. In the Eclipse navbar go to File>Import>General>Existing Projects into Workspace
+
+###If on a mac:
+
+1. Go to Run>Run Configurations>Java Application. 
+2. Select the create new and put org.cubestruct.game.Main as the main class. 
+3. Go to arguments and put `-XstartOnFirstThread` in the VM argument box.
+4. Click Apply
+5. Click Run
 
 #Features
 
