@@ -36,6 +36,7 @@ public class CubeStruct implements IGameLogic {
 
     public CubeStruct() {
     	camera.position.add(0, 1.5f, 0);
+    	camera.rotation.add(-80f,0.0f, 0);
         renderer = new Renderer();
     }
 
@@ -46,12 +47,14 @@ public class CubeStruct implements IGameLogic {
         renderer.init(window);
         
         gameItems = new ArrayList<GameItem>();
+        for(float y=-5.0f;y<=0.0f;y++){
         for(float x=-7.0f;x<=8.0f;x++){
         	for(float z=-7.0f;z<=8.0f;z++){
-        GameItem gameItem = new Cube(new Vector3f(1.0f,1.0f,1.0f),"/textures/grass.png");
-        gameItem.setPosition(x, 0, z);
+        GameItem gameItem = new Cube(new Vector3f(1.0f,1.0f,1.0f),y<0.0?"/textures/dirt.png":"/textures/grass.png");
+        gameItem.setPosition(x, y, z);
         
         gameItems.add(gameItem);
+        }
         }
         }
         glfwSetInputMode(window.windowHandle, GLFW_CURSOR, GLFW_CURSOR_DISABLED);

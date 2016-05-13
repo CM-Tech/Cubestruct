@@ -113,11 +113,11 @@ public class Cube extends GameItem {
           // Right face
           12, 13, 7, 5, 12, 7,
           // Left face
-          14, 15, 6, 4, 14, 6,
+          6,14,4,6,15,14,
           // Bottom face
-          16, 18, 19, 17, 16, 19,
+          19,16,17,19,18,16 ,
           // Back face
-          4, 6, 7, 5, 4, 7,};
+          7,4,5,7,6,4 };
       Texture texture = new Texture(texturePath);
       Mesh mesh = new Mesh(positions, textCoords, indices, texture);
       this.mesh = mesh;
