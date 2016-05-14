@@ -1,4 +1,4 @@
-package cm.cubestruct.world;
+package cm.cubestruct.block;
 
 import org.joml.Vector3f;
 

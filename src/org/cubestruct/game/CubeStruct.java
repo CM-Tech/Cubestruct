@@ -10,6 +10,7 @@ import cm.cubestruct.engine.render.Camera;
 import cm.cubestruct.engine.render.Cube;
 import cm.cubestruct.engine.render.Mesh;
 import cm.cubestruct.engine.render.Texture;
+import cm.cubestruct.world.BasicGen;
 import cm.cubestruct.world.SuperFlatGen;
 import cm.cubestruct.world.World;
 
@@ -38,7 +39,7 @@ public class CubeStruct implements IGameLogic {
     public World world;
 
     public CubeStruct() {
-    	camera.position.add(0, 1.5f, 0);
+    	camera.position.add(0, 1.5f+20f, 0);
     	camera.rotation.add(-80f,0.0f, 0);
         renderer = new Renderer();
     }
@@ -50,7 +51,9 @@ public class CubeStruct implements IGameLogic {
         renderer.init(window);
         
         gameItems = new ArrayList<GameItem>();
-      //world=new World(new SuperFlatGen());
+      world=new World(new BasicGen(1));
+      System.out.println("WORLD GEND");
+      
         if(world==null){
         for(float y=-5.0f;y<=0.0f;y++){
         for(float x=-7.0f;x<=8.0f;x++){
@@ -62,7 +65,13 @@ public class CubeStruct implements IGameLogic {
         }
         }
         }
+        }else{
+        	GameItem gameItem = new Cube(new Vector3f(1.0f,1.0f,1.0f),"/textures/dirt.png");
+            gameItem.setPosition(0,5,0);
+            
+            gameItems.add(gameItem);
         }
+        
         glfwSetInputMode(window.windowHandle, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
         
     }
@@ -137,6 +146,7 @@ public class CubeStruct implements IGameLogic {
 
     @Override
     public void render() {
+    	world.gen();
         renderer.render(window,gameItems,camera,world);
     }
 
