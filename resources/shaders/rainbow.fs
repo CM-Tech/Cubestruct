@@ -5,6 +5,15 @@ out vec4 fragColor;
 
 uniform sampler2D texture_sampler;
 
+/*
+ * GLSL HSV to RGB+A conversion. Useful for many effects and shader debugging.
+ *
+ * Copyright (c) 2012 Corey Tabaka
+ *
+ * Hue is in the range [0.0, 1.0] instead of degrees or radians.
+ * Alpha is simply passed through for convenience.
+ */
+
 vec4 hue_to_rgb(float h)
 {
 	h = mod((h * 6.), 6.);
