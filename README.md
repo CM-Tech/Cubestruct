@@ -14,7 +14,7 @@ For help with LWJGL 3, check out https://lwjglgamedev.gitbooks.io/3d-game-develo
 5. Make sure LWJGL Lirbary paths are correct in configurations
 6. ESC to close
 
-###If on a mac:
+### If on a mac:
 
 1. Go to Run>Run Configurations>Java Application. 
 2. Select the create new and put org.cubestruct.game.Main as the main class. 
@@ -22,7 +22,7 @@ For help with LWJGL 3, check out https://lwjglgamedev.gitbooks.io/3d-game-develo
 4. Click Apply
 5. Click Run
 
-#Features
+# Features
 
 * ModderMe123 added rainbow blocks
 
